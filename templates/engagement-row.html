@@ -1,0 +1,18 @@
+<!-- Verbatim Engagement Log row promoted to the AC "[domain] Solution Architects" page.
+     Prepend immediately after the log table's </thead> (newest on top).
+     The rovo-meeting-id comment is the dedup key. -->
+<tr>
+<td><p><strong>{{DATE}} — {{SESSION_TITLE}}</strong></p><p><strong>Atlassian:</strong> {{ATLASSIAN_ATTENDEES}}</p><p><strong>{{CUSTOMER_NAME}}:</strong> {{CUSTOMER_ATTENDEES}}</p><p><strong>Recording:</strong> <a href="{{LOOM_URL}}" data-card-appearance="inline"></a></p><!-- rovo-meeting-id: {{MEETING_ID}} --></td>
+<td>{{NOTES_SA_LENS}}</td>
+<td>{{NEXT_STEPS}}</td>
+</tr>
+
+<!-- Asset month expand: insert after the Asset Repository help block's </details>.
+     If a "<Month YYYY>" expand already exists, append the <li> items to it instead. -->
+<!--
+<details><summary>{{MONTH_YEAR}}</summary>
+<ul>
+<li><p><strong>{{DATE}} — </strong><a href="{{ASSET_URL}}" data-card-appearance="inline">{{ASSET_TITLE}}</a> (authored deliverable shared with customer)</p></li>
+</ul>
+</details>
+-->

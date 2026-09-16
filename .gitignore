@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Rovo / temp
+tmp_rovo_*
+*.log
+
+# Local state produced at runtime
+sa-engagement-state.json

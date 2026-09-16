@@ -1,0 +1,9 @@
+prompts:
+  - name: sa-eod
+    description: >
+      End-of-day SA engagement sync. Finds your customer meetings, enriches them from
+      SAREQ/Calendar/Loom/Slack/as-a-team, drafts an engagement update in your Hello
+      personal space, and (on your approval) promotes it to the customer's Account Central
+      "[domain] Solution Architects" page. Optional args: --since <window> (e.g. 3d),
+      --customer <domain>, --dry-run.
+    content_file: sa_eod.md

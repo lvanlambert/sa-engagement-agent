@@ -1,0 +1,27 @@
+<!-- rovo-meeting-id: {{MEETING_ID}} | customer: {{DOMAIN}} | run: {{RUN_DATE}} -->
+<div data-type="panel-note"><p><strong>DRAFT — awaiting review.</strong> Approve as-is by replying <code>approve {{DOMAIN}}</code> in Slack, or edit this page first (especially the asset candidates) then approve. On approval: the <strong>Engagement Log row</strong> is copied verbatim into the <a href="{{AC_PAGE_URL}}" data-card-appearance="inline"></a> Engagement Log (newest on top); the <strong>asset(s) you keep</strong> are added to that page's Asset Repository under a collapsible <strong>{{MONTH_YEAR}}</strong> expand. SAREQ ticket &amp; Salesforce opp are already on the AC page (template) and are NOT re-linked here. Context section is review-only.</p></div>
+
+<h2>Engagement Log row (copied verbatim into AC on approval)</h2>
+<table>
+<thead><tr><th>Date / Session / Attendees</th><th>Notes (SA lens)</th><th>Next Steps</th></tr></thead>
+<tbody>
+<tr>
+<td><p><strong>{{DATE}} — {{SESSION_TITLE}}</strong></p><p><strong>Atlassian:</strong> {{ATLASSIAN_ATTENDEES}}</p><p><strong>{{CUSTOMER_NAME}}:</strong> {{CUSTOMER_ATTENDEES}}</p><p><strong>Recording:</strong> <a href="{{LOOM_URL}}" data-card-appearance="inline"></a></p></td>
+<td>{{NOTES_SA_LENS}}</td>
+<td>{{NEXT_STEPS}}</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Asset candidates — authored deliverables only (approver: keep/remove before approval)</h2>
+<div data-type="panel-warning"><p>Assets = substantive work product we built <em>with</em> the customer (SDAs, architecture docs, whiteboards, decks). Recordings and meeting-notes pages are excluded. Keep the correct ones, remove wrong ones, add any I missed. Only kept assets are promoted to the AC Asset Repository ({{MONTH_YEAR}} expand).</p></div>
+<table>
+<thead><tr><th>Candidate deliverable</th><th>Confidence</th><th>Why (matching signal)</th></tr></thead>
+<tbody>
+{{ASSET_CANDIDATE_ROWS}}
+</tbody>
+</table>
+<p><em>{{ASSET_NOTES}}</em></p>
+
+<h2>Context (review-only, NOT written to Account Central)</h2>
+<div data-type="panel-info"><p><strong>SAREQ:</strong> {{SAREQ_KEY}} &nbsp;·&nbsp; <strong>SA:</strong> {{SA_NAME}} &nbsp;·&nbsp; <strong>Region:</strong> {{REGION}} &nbsp;·&nbsp; <strong>Close:</strong> {{CLOSE_DATE}} &nbsp;·&nbsp; <strong>Slack:</strong> {{SLACK_CHANNEL}} &nbsp;·&nbsp; <strong>Co-delivery:</strong> {{CO_DELIVERY}}</p><p><strong>Sources synthesized:</strong> {{SOURCES}}</p></div>
