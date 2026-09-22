@@ -42,3 +42,22 @@ per-person config. Do not put individual identities, tokens, or customer-specifi
 - Atlassian/TWG: automatic per-user (Rovo login).
 - Google Calendar, Loom, Slack: per-user one-time OAuth. Slack's 3LO grant is currently
   flaky org-wide — the agent degrades gracefully without it. See docs/ONBOARDING.md.
+
+## Model routing (AI Wallet cost/quality)
+Every Rovo CLI model draws on the AI Wallet; cost = tokens × the model's credit multiplier.
+Reasoning effort (low→xhigh) does NOT change the multiplier, so prefer `high` on the chosen
+tier — it's a free-in-credits upgrade. Keep sessions under ~300k context tokens (Claude
+cache-write cost dominates large runs). Multipliers change over time — re-check the Rovo CLI
+Model Selection Guide (hello) before relying on the numbers below (verified 2026-09-22).
+
+- **Default (standing):** **GPT-5.6 Terra (high)** — 1.0x. Best quality/credit balance for this
+  agent's tool-heavy synthesis + careful additive Confluence edits. In an A/B on a real
+  Medtronic run it produced the deepest, best-structured draft and asset ranking.
+- **Budget / routine EOD batch:** **Haiku 4.5** (or Gemini 3 Flash) — 0.4x. Kept the judgment
+  (source synthesis, confidence-ranked assets, attendee caveats) at ~1/5 the cost of Opus.
+- **Escalation only (manual):** **Claude Opus 5** — 2.0x. Reserve for a genuinely hard,
+  expensive-to-unwind synthesis call; its premium was NOT justified on the routine run.
+- **Never as the driver:** **Luna** — 0.1x. Guide-flagged "never for judgment calls"; this
+  agent is mostly judgment + safe writes, so mis-scoping/bad AC edits aren't worth the savings.
+
+Apply any model override equally if benchmarking. Rovo may switch models under load; that's fine.
